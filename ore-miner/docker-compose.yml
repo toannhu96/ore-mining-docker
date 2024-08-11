@@ -4,7 +4,6 @@ services:
     container_name: ore-miner
     build:
       context: .
-      target: production
     image: ore-miner
     restart: always
     command: "/root/.cargo/bin/ore --rpc $${SOL_RPC} --keypair /root/wallet.json --priority-fee $${PRIORITY_FEE} mine --cores $${THREAD_COUNT}"

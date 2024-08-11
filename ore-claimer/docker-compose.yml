@@ -4,7 +4,6 @@ services:
     container_name: ore-claimer
     build:
       context: .
-      target: production
     image: ore-claimer
     restart: always
     command: "/root/.cargo/bin/ore --rpc $${SOL_RPC} --keypair /root/wallet.json claim"
