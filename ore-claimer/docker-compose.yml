@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  ore-claimer:
+    container_name: ore-claimer
+    build:
+      context: .
+      target: production
+    image: ore-claimer
+    restart: always
+    command: "/root/.cargo/bin/ore --rpc $${SOL_RPC} --keypair /root/wallet.json claim"
+    logging:
+      driver: json-file
+      options:
+        max-size: "15m"
+        max-file: "3"
+    env_file:
+      - .env
