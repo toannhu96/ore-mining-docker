@@ -6,7 +6,7 @@ services:
       context: .
     image: ore-claimer
     restart: always
-    command: "/root/.cargo/bin/ore --rpc $${SOL_RPC} --keypair /root/wallet.json claim"
+    command: "ore --rpc $${SOL_RPC} --keypair /app/wallet.json claim"
     logging:
       driver: json-file
       options:

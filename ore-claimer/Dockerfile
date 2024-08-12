@@ -1,13 +1,15 @@
 FROM rust:1.79-slim-buster
 
+WORKDIR /app
+
 RUN apt update -y && \
-    apt install cargo -y && \
+    apt install pkg-config libssl-dev cargo -y && \
     export PATH=/root/.cargo/bin:$PATH && \
     cargo install ore-cli && \
     rm -rf /var/lib/apt/lists/*
 
-COPY wallet.json /root/wallet.json
+COPY wallet.json .
 
-COPY claim.sh /root/claim.sh
+COPY claim.sh .
 
-ENTRYPOINT ["sh", "/root/claim.sh"]
+ENTRYPOINT ["sh", "claim.sh"]

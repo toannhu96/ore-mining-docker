@@ -13,10 +13,11 @@ Run ORE Mining within single command using `docker compose`.
    echo "[your,wallet,private,key]" > wallet.json
    ```  
 
-   Note: You might use `solana-cli` to generate new keypair
+   Note: You might use `solana-cli` to generate new keypair.
    ```bash
    solana-keygen new
    ```
+   Don't forget to transfer some SOL as gas fee for mining transactions. Also you need at least `0.05 SOL` in your wallet balance.
 
 2. Add `.env`
    ```env
@@ -26,7 +27,7 @@ Run ORE Mining within single command using `docker compose`.
    ```
 
    Note: 
-   - Use private Solana RPC such as [Helius](https://helius.dev) or [Shyft](https://shyft.to) to prevent public RPC rate-limit.
+   - It is recommended to use private Solana RPC such as [Helius](https://helius.dev) or [Shyft](https://shyft.to) to prevent public RPC rate-limit.
    - `PRIORITY_FEE` is fee to use for mining transactions. You should set minimum priority fee equal or higher median fee from [Solana gas tracker](https://www.quicknode.com/gas-tracker/solana)
    - Thread count is number of threads to use for mining.
 
@@ -39,4 +40,4 @@ Run ORE Mining within single command using `docker compose`.
 
 ## License
 
-Inpsired by (this repo)[https://github.com/f3n1b00t/ore-containers] for idea. Also thanks for [HardhatChad](https://github.com/HardhatChad) for brilliant project on Solana! Feel free to use, share and fork this repo!
+Inpsired by [this repo](https://github.com/f3n1b00t/ore-containers) for idea. Also thanks for [HardhatChad](https://github.com/HardhatChad) for brilliant project on Solana! Feel free to use, share and fork this repo!
